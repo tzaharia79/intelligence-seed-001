@@ -125,3 +125,23 @@ Full report and draft records-request text: [Phoenix Artifact Inspection and Uti
 **Public utility/regulatory records:** ACC reports Arizona utility record peaks in August 2025 (context only): https://azcc.gov/news/home/2025/08/09/arizona-electric-utilities-set-record-high-demand--again. SRP says data centres represented 5.1% of its summer 2025 peak and describes minimum-billing rules for new large loads: https://www.srpnet.com/about/data-center-facts. APS describes proposed large-customer cost-allocation/formula rates: https://www.aps.com/en/Utility/Regulatory-and-Legal/Rate-case. FERC directed NERC to submit initial computational-load reliability standards by December 31, 2026: https://www.ferc.gov/news-events/news/summaries-july-2026-commission-meeting. These sources contextualize peak demand, costs, and reliability but do not independently verify benefits from the Phoenix experiment.
 
 **Status:** No public event-specific utility-side measurement-and-verification report was found in this pass that attributes changes in grid peak, congestion, reserves, dispatch cost, reliability, customer bills or avoided infrastructure to the Phoenix demonstration. Do not promote those outcomes as established. See the full inspection report for records pathways and request text.
+
+
+## Network resilience case — Meta global outage (2021-10-04)
+
+**Claim:** A maintenance action and failed audit safeguard can propagate through shared backbone, DNS/BGP reachability, and recovery tooling, causing a global service outage; recovery paths need to be tested for correlated dependencies.
+
+**Assessment:** High for the specific documented incident. Meta's operator postmortem describes a maintenance command that disconnected the backbone, a bug in the audit tool, DNS route withdrawal, impaired internal tooling and remote access, and staged recovery. RIPE NCC's BGP observations independently show routes disappearing and later returning. Cloudflare's resolver telemetry independently documents DNS SERVFAILs, retry traffic, and degraded performance on a sample of sites embedding Meta resources.
+
+**Sources:**
+- Meta Engineering, “More details about the October 4 outage” (2021-10-05): https://engineering.fb.com/2021/10/05/networking-traffic/outage-details/
+- RIPE Labs, “Facebook Down and Out in BGPlay” (2021-10-05): https://labs.ripe.net/author/alun_davies/facebook-down-and-out-in-bgplay/
+- Cloudflare, “What happened on the Internet during the Facebook outage” (2021-10-08): https://blog.cloudflare.com/during-the-facebook-outage/
+
+**Limits / counterevidence:** Sources corroborate different layers but do not constitute a complete independent forensic audit. Meta's account is an operator postmortem; Cloudflare references the Meta explanation for internal causes. The event does not show that centralization is always harmful, that redundancy never works, or that the outage was AI-specific. It provides no evidence for a universal bridge law or a unified human–AI goal.
+
+**Glossary application:** The case is a negative/boundary case for “bridge”: system-level organization and connectivity enable global service but can create correlated failure. Capability extension and recombination are not quantified; future possibility-space change is not established. Desk rubric (0–2 qualitative prompts, not validated): B=2, M=2, D=2, A=2, F=0, T=2 for the narrow failure-propagation claim.
+
+**Follow-up:** Compare other cloud/control-plane outages and documented successful containment cases; examine independent management-plane design, safe change validation, DNS/control-plane isolation, and staged recovery evidence.
+
+See [Network Resilience Case Study 01 — Meta's October 4, 2021 Global Outage](NETWORK-RESILIENCE-CASE-01-META-OUTAGE.md).
