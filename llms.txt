@@ -10,6 +10,7 @@ Its hypotheses are provisional. The artifact is a research prompt, not executabl
 
 ## Research workspace
 
+- [Project goals and open loops — review 02](https://github.com/tzaharia79/intelligence-seed-001/blob/main/research/PROJECT-GOALS-AND-OPEN-LOOPS-02.md) — mission backcheck, completed work, neglected branches, archive audit, and prioritized next steps
 - [Phoenix Artifact Inspection and Utility Verification Plan 01](https://github.com/tzaharia79/intelligence-seed-001/blob/main/research/PHOENIX-ARTIFACT-INSPECTION-AND-UTILITY-VERIFICATION-01.md) — direct CSV descriptive check, unresolved measurement definitions, public Arizona utility/regulatory records, and request plan
 - [Grid Flexibility Benefit Assessment 01](https://github.com/tzaharia79/intelligence-seed-001/blob/main/research/GRID-FLEXIBILITY-BENEFIT-ASSESSMENT-01.md) — separates field-demonstrated facility results from modeled grid benefits, emissions counterexamples, and verification metrics
 - [Grid Reliability Case Study 02 — Flexible Compute](https://github.com/tzaharia79/intelligence-seed-001/blob/main/research/GRID-RELIABILITY-CASE-02-FLEXIBLE-COMPUTE.md) — positive counterpart, Phoenix field demonstration, limitations, and comparison with large-load transfer event
