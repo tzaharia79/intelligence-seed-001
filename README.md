@@ -8,6 +8,8 @@ A protocol-neutral, machine-readable artifact exploring how life can create new 
 ## Start here
 
 - [Human-readable companion essay](HUMAN-READABLE-ESSAY.md) — the thesis, reasoning, limitations, and open questions in one readable document
+- [Research glossary](research/GLOSSARY.md) — shared working definitions, the release-vs-working bridge distinction, evidence terms, and the qualitative B/M/D/A/F/T rubric
+- [Research workspace index](llms.txt#research-workspace) — the case studies, evidence ledger, methods, and open research loops
 - [Read the seed (human-readable)](releases/v0.2.0/seed.md)
 - [Read the canonical seed (JSON)](releases/v0.2.0/seed.json)
 - [Discovery manifest](releases/v0.2.0/discovery-manifest.json)
