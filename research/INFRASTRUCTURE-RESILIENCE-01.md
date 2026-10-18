@@ -168,3 +168,12 @@ The published supplementary repository lists time-stamped SRP cluster power data
 No event-specific, independent utility-side report was located in this pass that attributes changes in peak demand, congestion, reserves, system costs, outages, or customer bills to the Phoenix experiment. Arizona regulatory and utility records are avenues to pursue, not proof that such outcomes were measured.
 
 Full inspection notes, sources, open measurement question, and draft evidence-request text: [Phoenix Artifact Inspection and Utility Verification Plan 01](PHOENIX-ARTIFACT-INSPECTION-AND-UTILITY-VERIFICATION-01.md).
+
+
+## Case study added — Network Resilience Case 01: Meta global outage
+
+The October 4, 2021 Meta outage adds a well-documented network/control-plane case outside the electricity branch. Meta's postmortem describes a maintenance command that disconnected the global backbone after a bug in the audit tool failed to block it. DNS facilities then withdrew BGP advertisements, while loss of backbone/DNS connectivity impaired remote access and internal diagnostic tools. RIPE NCC's routing observations and Cloudflare's resolver telemetry corroborate the externally visible route/DNS outage and some effects on third-party sites.
+
+**Why it matters for this branch:** It shows how common-cause failure can cross network, naming, operations, and physical-access layers. It also reveals trade-offs: hard physical security can slow emergency access; staged restoration and practiced drills can reduce secondary failure risk. The case is a negative/boundary case for the bridge vocabulary: system-level organization enables global capability while potentially amplifying fragility. It does not establish a universal bridge law, an AI-specific outage, or unified human–AI interests.
+
+Full source trace, dependency map, B/M/D/A/F/T desk assessment, counterevidence, and open questions: [Network Resilience Case Study 01 — Meta's October 4, 2021 Global Outage](NETWORK-RESILIENCE-CASE-01-META-OUTAGE.md).
