@@ -114,3 +114,14 @@ Full synthesis and evaluation protocol: [Grid Flexibility Benefit Assessment 01]
 **Status:** Facility demand flexibility = supported by published field demonstration, pending metric clarification and independent recalculation. Grid/public benefits = not yet verified by event-specific independent utility records.
 
 Full report and draft records-request text: [Phoenix Artifact Inspection and Utility Verification Plan 01](PHOENIX-ARTIFACT-INSPECTION-AND-UTILITY-VERIFICATION-01.md).
+
+
+## Phoenix CSV direct inspection and utility-record search update (2026-10-18)
+
+**Direct data inspection:** `SRP_total_power.csv` contains 400 one-minute rows from 14:40–21:19 local time on May 4, 2025. The `total` column has no unit in the header. Exploratory means: 14:40–15:13 = 94,035.76; 17:00–18:59 = 63,666.97; 19:00–19:59 = 73,694.51; 20:00–21:19 = 89,525.88. These hand-selected clock windows imply a descriptive 32.3% difference between the first and lower-power windows, but are **not** a reproduction of the paper's 25% result because official event/baseline windows, units, measurement boundary and exclusions are unverified. The series rises again after the lower-power window; causation/rebound cannot yet be determined.
+
+**Performance data:** six workload rows range from normalized 0.666923 to 1.0; weighted value 0.909560245. This requires method context before assigning a precise service-degradation interpretation. Public measurement question remains open with zero comments when checked: https://github.com/ai-emerald/emerald-ai-demo-may-2025/issues/1.
+
+**Public utility/regulatory records:** ACC reports Arizona utility record peaks in August 2025 (context only): https://azcc.gov/news/home/2025/08/09/arizona-electric-utilities-set-record-high-demand--again. SRP says data centres represented 5.1% of its summer 2025 peak and describes minimum-billing rules for new large loads: https://www.srpnet.com/about/data-center-facts. APS describes proposed large-customer cost-allocation/formula rates: https://www.aps.com/en/Utility/Regulatory-and-Legal/Rate-case. FERC directed NERC to submit initial computational-load reliability standards by December 31, 2026: https://www.ferc.gov/news-events/news/summaries-july-2026-commission-meeting. These sources contextualize peak demand, costs, and reliability but do not independently verify benefits from the Phoenix experiment.
+
+**Status:** No public event-specific utility-side measurement-and-verification report was found in this pass that attributes changes in grid peak, congestion, reserves, dispatch cost, reliability, customer bills or avoided infrastructure to the Phoenix demonstration. Do not promote those outcomes as established. See the full inspection report for records pathways and request text.
