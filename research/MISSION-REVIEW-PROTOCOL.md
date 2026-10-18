@@ -58,3 +58,13 @@ Current agreed sequence:
 - **Neglected resilience branches:** cooling/water, semiconductor supply chains, cloud/network outages, human/institutional dependencies, security/governance, and distributional conflicts.
 - **Archive loop:** independently verify Zenodo DOI resolution, version metadata, archived file list/checksums, and alignment before any v0.3.0 decision.
 - **Next sequence:** (1) choose one well-documented non-grid resilience case without outreach; (2) update the evidence ledger with its counterevidence and distributional impacts; (3) conduct archive/alignment audit; (4) prepare user-authored outreach only when the user is ready.
+
+
+## Mission review log — 2026-10-18 (review 04)
+
+- **Documentation/discoverability:** Linked the glossary from the README and llms.txt; corrected the glossary's relative provenance path to ../releases/v0.2.0/provenance.json. The archived v0.2.0 seed remains unchanged.
+- **Resilience branch balance:** Added [Network Resilience Case Study 01 — Meta's October 4, 2021 Global Outage](NETWORK-RESILIENCE-CASE-01-META-OUTAGE.md), using Meta's operator postmortem and independent RIPE NCC and Cloudflare observations.
+- **Glossary use:** Explicitly distinguishes baseline/counterfactual, capability extension, recombination, possibility-space change, and system-level organization. Uses B/M/D/A/F/T as qualitative desk prompts, not a validated metric. The case is treated as a boundary/negative case for overly optimistic “bridge” framing.
+- **Evidence update:** Added the case to the evidence ledger and linked it from the infrastructure-resilience branch and llms.txt.
+- **Limits:** This is a desk case based on public sources, not an independent forensic audit. It does not establish an AI-specific outage or unified human–AI interests.
+- **Next sequence:** (1) compare this case with a cloud-region or control-plane outage and a case where independent recovery paths successfully contained failure; (2) keep widening resilience beyond the grid and network branches; (3) continue the separate Zenodo/archive alignment audit before any release decision. Direct company outreach remains paused.
