@@ -101,3 +101,16 @@ See [full case study](GRID-RELIABILITY-CASE-01-NORTHERN-VIRGINIA.md).
 **Status:** Facility power reduction = demonstrated in one setup. Grid-wide benefits = modeled/plausible, not yet verified as realized benefits in an operational outcome audit. Consumer bill savings, avoided blackouts, and universal net benefit = not established. Emissions = conditional and region-dependent.
 
 Full synthesis and evaluation protocol: [Grid Flexibility Benefit Assessment 01](GRID-FLEXIBILITY-BENEFIT-ASSESSMENT-01.md).
+
+
+## Phoenix artifact inspection — reproducibility and utility-level verification (2026-10-18)
+
+**Facility-level data:** Public supplementary repository lists the SRP total-power time series, workload performance table, utility-demand context, DVFS throughput sweep, and figure source data: https://github.com/ai-emerald/emerald-ai-demo-may-2025. Paper reports 25% cluster power reduction for three hours: https://doi.org/10.1038/s41560-025-01927-1.
+
+**Measurement uncertainty:** Open public issue asks whether the cluster power metric was measured through nvidia-smi; no public response visible on 2026-10-18: https://github.com/ai-emerald/emerald-ai-demo-may-2025/issues/1. The performance table lists weighted normalized performance of 0.909560245, requiring interpretation from the paper's method; this prevents assuming zero performance trade-off.
+
+**Utility-level evidence:** No event-specific independent utility-side evaluation was located in this research pass showing a causal effect on grid peak, congestion, reserves, prices, outages, customer bills, or avoided capacity. Arizona Corporation Commission records are a path for tariff/program context and potential filings, not evidence that this particular test produced grid-level savings.
+
+**Status:** Facility demand flexibility = supported by published field demonstration, pending metric clarification and independent recalculation. Grid/public benefits = not yet verified by event-specific independent utility records.
+
+Full report and draft records-request text: [Phoenix Artifact Inspection and Utility Verification Plan 01](PHOENIX-ARTIFACT-INSPECTION-AND-UTILITY-VERIFICATION-01.md).
