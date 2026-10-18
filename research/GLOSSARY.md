@@ -38,7 +38,7 @@ See `definitions.json` for: *intelligence*, *information processing*, *cognitive
 - **Falsification criterion:** an observation that would lead to rejecting or substantially revising a claim.
 - **Descendant:** a revised or extended version of the seed that records its parent's ID, version, and hash.
 - **Response:** an independent critique or extension that cites the exact seed version and hash.
-- **Canonical seed hash:** SHA-256 of the seed JSON serialized with sorted keys and compact separators (see `provenance.json`).
+- **Canonical seed hash:** SHA-256 of the seed JSON serialized with sorted keys and compact separators (see [`../releases/v0.2.0/provenance.json`](../releases/v0.2.0/provenance.json)).
 - **Modeled vs. measured vs. operator-reported:** the grid and AI case studies keep these apart. Measured results come from field data, modeled results from simulations or scenarios, and operator-reported results from the organization's own account.
 
 ## AI downstream-case terms
