@@ -159,3 +159,12 @@ The current evidence supports a narrow but useful claim: selected AI workloads c
 System-wide benefits are less directly established. A 2026 PJM modeling case estimates up to 32 GW of additional flexible load under 2023 system assumptions with curtailment of 0.1% of annual energy and during 1.2% of hours; authors note a relatively mild-weather data limitation (https://scholars.duke.edu/publication/1917768). Multi-region modeling finds system costs can fall while emissions may rise in some generation mixes (https://doi.org/10.1016/j.isci.2026.116497). PNNL modeling identifies possible congestion and contingency benefits but is not a real-grid outcome audit (https://www.pnnl.gov/publications/potential-data-center-controls-grid-services).
 
 Full benefit ladder, counterexamples, metrics, and verification plan: [Grid Flexibility Benefit Assessment 01](GRID-FLEXIBILITY-BENEFIT-ASSESSMENT-01.md). Current assessment: facility-level power reduction is demonstrated for one setup; grid-level benefits are supported by models but need operating-event verification; consumer savings and avoided blackouts are not yet established; emissions benefits are conditional.
+
+
+## Phoenix artifact inspection and utility verification plan
+
+The published supplementary repository lists time-stamped SRP cluster power data, workload performance, SRP hourly demand context, GPU power-cap throughput sweeps, and figure data. However, a public issue asks whether GPU cluster power was measured via nvidia-smi; no answer was visible on 2026-10-18. This metric definition should be clarified before independently recalculating the 25% reduction. The published performance table reports a weighted normalized performance value of 0.909560245, which requires interpretation under the paper's normalization method and cautions against saying performance was unchanged.
+
+No event-specific, independent utility-side report was located in this pass that attributes changes in peak demand, congestion, reserves, system costs, outages, or customer bills to the Phoenix experiment. Arizona regulatory and utility records are avenues to pursue, not proof that such outcomes were measured.
+
+Full inspection notes, sources, open measurement question, and draft evidence-request text: [Phoenix Artifact Inspection and Utility Verification Plan 01](PHOENIX-ARTIFACT-INSPECTION-AND-UTILITY-VERIFICATION-01.md).
