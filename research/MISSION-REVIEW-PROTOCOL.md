@@ -68,3 +68,13 @@ Current agreed sequence:
 - **Evidence update:** Added the case to the evidence ledger and linked it from the infrastructure-resilience branch and llms.txt.
 - **Limits:** This is a desk case based on public sources, not an independent forensic audit. It does not establish an AI-specific outage or unified human–AI interests.
 - **Next sequence:** (1) compare this case with a cloud-region or control-plane outage and a case where independent recovery paths successfully contained failure; (2) keep widening resilience beyond the grid and network branches; (3) continue the separate Zenodo/archive alignment audit before any release decision. Direct company outreach remains paused.
+
+
+## Mission review log — 2026-10-19 (review 05)
+
+- **Comparative resilience case:** Added [Network Resilience Case Study 02 — AWS S3 Outage and Recovery-Path Coupling](NETWORK-RESILIENCE-CASE-02-AWS-S3-OUTAGE.md) to compare AWS S3 (2017) with Meta (2021).
+- **Working glossary applied:** Explicitly distinguishes baseline/counterfactual, capability extension, recombination, possibility-space change, and system-level organization; includes qualitative B/M/D/A/F/T desk prompts with limits stated.
+- **Main finding:** Both incidents show operational faults propagating through shared dependencies and impairing recovery-adjacent functions. AWS's detailed service-status console depended on S3; Meta's network failure impaired DNS reachability and normal remote/diagnostic access. AWS also reported recovery and integrity checks took longer than expected at scale.
+- **Evidence boundary:** AWS analysis relies mainly on the operator postmortem in this desk review; Meta has additional independent routing/DNS observations. These are illustrative cases, not a population-level estimate, independent forensic audits, or proof that centralization is always harmful.
+- **Evidence ledger updated** and case linked in the infrastructure-resilience branch and discovery index.
+- **Next test:** Seek a positive/containment case where independently designed and tested recovery paths successfully limit an outage. Keep the branch balanced and do not release v0.3.0 until findings are synthesized and version/archive alignment is checked.
