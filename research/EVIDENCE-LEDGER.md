@@ -197,3 +197,14 @@ See [Network Resilience Case Study 03 — Cloudflare's March 2024 Contained Data
 **Sources:** Cloudflare March postmortem https://blog.cloudflare.com/major-data-center-power-failure-again-cloudflare-code-orange-tested/ ; Data Center Dynamics https://www.datacenterdynamics.com/en/news/cloudflare-suffers-second-power-outage-at-flexential-data-center-in-oregon-in-six-months/ ; Cloudflare 2024 annual filing https://cloudflare.net/files/doc_financials/2024/q4/2c5ce18c-bb02-4031-89cb-59ff64f22eaf.pdf ; status API docs https://www.cloudflarestatus.com/api.
 
 **Next test:** Seek timestamped independent synthetic monitoring, traffic/BGP/DNS telemetry, customer-side incident reports, or a public facility root-cause report. No outreach was made.
+
+
+## Follow-up: independent Cloudflare recovery evidence search (2026-10-19)
+
+The follow-up searched archived synthetic-monitoring/status sources, customer-side reports, historical BGP measurement resources, and facility documentation. The status incident page `b31dxdz60366` and contemporaneous repost preserve Cloudflare's declared scope (dashboard/API issues, with cached CDN delivery and edge security features reported unaffected), but the underlying notice is operator-authored. A WordPress support thread reports an analytics-data interruption and later resumption; this is anecdotal customer-side corroboration of an analytics symptom, not evidence of data-plane continuity. IsDown and StatusGator describe status aggregation/user-report services, but no timestamped independent probes for 2024-03-26 14:50–15:20 UTC were found. Historical BGP analysis via RIPE RIS/BGPlay is a viable next step, but a reproducible raw AS13335 query was not obtained in this pass; no BGP conclusion is asserted. No public Flexential incident or electrical forensic report specific to PDX01 was found.
+
+**Updated label:** Detailed operator-reported recovery, externally reported and partly consistent with anecdotal customer evidence; exact recovery and data-plane claims not independently measured in this review.
+
+**Audit:** [Cloudflare Recovery Claims — Independent Evidence Check 01](CLOUDFLARE-RECOVERY-CLAIMS-INDEPENDENT-CHECK-01.md).
+
+**Public leads:** Cloudflare status incident https://www.cloudflarestatus.com/incidents/b31dxdz60366 ; WordPress support thread https://wordpress.org/support/topic/site-kit-connected-correctly-and-no-data-in-analytics/ ; IsDown https://isdown.app/status/cloudflare ; StatusGator https://statusgator.com/services/cloudflare ; RIPE RIS https://www.ripe.net/analyse/internet-measurements/routing-information-service-ris/ ; RIPEstat BGPlay API https://data.stat.ripe.net/docs/data-api/api-endpoints/bgplay ; Flexential Portland/Hillsboro facility page https://www.flexential.com/data-centers/portland-hillsboro-5 .
