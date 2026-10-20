@@ -177,3 +177,8 @@ The October 4, 2021 Meta outage adds a well-documented network/control-plane cas
 **Why it matters for this branch:** It shows how common-cause failure can cross network, naming, operations, and physical-access layers. It also reveals trade-offs: hard physical security can slow emergency access; staged restoration and practiced drills can reduce secondary failure risk. The case is a negative/boundary case for the bridge vocabulary: system-level organization enables global capability while potentially amplifying fragility. It does not establish a universal bridge law, an AI-specific outage, or unified human–AI interests.
 
 Full source trace, dependency map, B/M/D/A/F/T desk assessment, counterevidence, and open questions: [Network Resilience Case Study 01 — Meta's October 4, 2021 Global Outage](NETWORK-RESILIENCE-CASE-01-META-OUTAGE.md).
+
+
+## Comparative case added — AWS S3 outage (2017)
+
+[Network Resilience Case Study 02 — AWS S3 Outage and Recovery-Path Coupling](NETWORK-RESILIENCE-CASE-02-AWS-S3-OUTAGE.md) compares the February 2017 S3 incident with Meta's 2021 outage. AWS reported that detailed Service Health Dashboard updates depended on S3, while recovery of index/placement subsystems and integrity checks took longer than expected at scale. The comparison strengthens the research question around recovery-path independence: diagnostic, communication, and restoration mechanisms should be tested for shared failure domains, not just counted as separate components. The AWS case is primarily supported here by the operator postmortem; the Meta case additionally has independent RIPE NCC and Cloudflare observations. Neither case establishes a universal bridge law or unified human–AI goal.
