@@ -118,3 +118,22 @@ Zenodo DOI/versioning guidance: https://support.zenodo.org/help/en-gb/1-upload-d
 The project has not lost its original mission, but it has been at risk of narrowing around one attractive hypothesis and one highly visible infrastructure case. The research now contains useful separate strands; the next challenge is synthesis, balance, and independent criticism rather than collecting ever more examples in a single branch.
 
 The thesis remains provisional. The project succeeds by making claims more precise, more testable, and more open to revision—not by accumulating a predetermined number of supportive cases.
+
+
+## Later-return direction: biological sampling and evolutionary mechanisms
+
+**Preserve for a future research branch; do not let this note silently expand the current technical resilience work.** The project should eventually sample the biological spectrum alongside technological and organizational systems: natural biological functions, evolution, heritable traits, variation, selection, inheritance, development, ecological dependencies, and biological mechanisms that preserve or transform information-processing capacity across generations.
+
+The goal is not to force biological phenomena into the current bridge hypothesis or assume every evolved trait is an intelligence bridge. Use the same glossary discipline: define the system boundary and baseline; distinguish function from evolutionary explanation; separate observed mechanism from interpretation; identify inheritance pathway and selection context; examine trade-offs, failed adaptations, exaptations, drift, constraint, and environmental dependence; and state when an example extends a capability, recombines existing functions, changes a possibility-space, or only demonstrates system-level organization.
+
+Potential sampling families for later scoping:
+- **Inheritance and variation:** genetic inheritance, mutation, recombination, epigenetic effects, and the limits of heritability claims.
+- **Natural information processing:** immune memory, cellular regulation, sensory systems, nervous systems, and distributed coordination in organisms.
+- **Evolutionary transitions and cooperation:** multicellularity, symbiosis, eusociality, endosymbiosis, and major transitions in individuality—without presuming a single progressive direction.
+- **Development and plasticity:** learning, developmental constraints, phenotypic plasticity, niche construction, and gene–environment interaction.
+- **Counterexamples and costs:** maladaptation, extinction, genetic load, trade-offs, parasitism, brittle specializations, and traits that persist without being optimal.
+- **Cross-domain comparison:** only after individual cases have adequate evidence, compare biological, social, and technological mechanisms using shared terms while preserving differences in substrate, timescale, agency, and inheritance.
+
+Open questions for that future branch: What counts as information processing in a biological system? Which claims are supported by direct experimental evidence versus evolutionary reconstruction? What is inherited, by what mechanism, and at what level? How do we avoid teleology, anthropomorphism, and treating evolution as a ladder toward intelligence? Which biological examples genuinely test the seed's ideas, and which are merely analogies?
+
+**Status:** parked for a later scoped research pass. The immediate work remains completing balanced infrastructure-resilience cases and improving independent evidence quality before release v0.3.0.
