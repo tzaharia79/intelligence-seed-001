@@ -164,3 +164,21 @@ See [Network Resilience Case Study 01 — Meta's October 4, 2021 Global Outage](
 **Limits:** Does not prove all centralization is harmful, redundancy is useless, all recovery channels failed, or that these cases establish a universal bridge law or unified human–AI goal.
 
 **Follow-up:** Examine a case where independently designed and tested recovery paths successfully contain an outage, to avoid building the branch solely from failures. See [Network Resilience Case Study 02 — AWS S3 Outage and Recovery-Path Coupling](NETWORK-RESILIENCE-CASE-02-AWS-S3-OUTAGE.md).
+
+
+## Positive/partial-containment case — Cloudflare facility outage (2024-03-26)
+
+**Claim:** Following its November 2023 control-plane/analytics outage, Cloudflare made resilience changes and rehearsed a cut test; during a second major power loss at the same facility on March 26, 2024, it reported that APIs and dashboards returned to normal in seven minutes without human intervention and that the global data plane was not impacted. Analytics remained impaired until later that day, and a few services required manual intervention.
+
+**Assessment:** Strong before/after operational evidence for this specific case, but primarily operator-reported and not a controlled experiment. Cloudflare's postmortem links the outcome to highly available configuration databases, pre-provisioned capacity, and automatic failover; the contribution of individual interventions cannot be isolated. The earlier November event provides the baseline, and a February internal cut test preceded the repeat incident.
+
+**Sources:**
+- Cloudflare March 2024 postmortem: https://blog.cloudflare.com/major-data-center-power-failure-again-cloudflare-code-orange-tested/
+- Cloudflare November 2023 postmortem: https://blog.cloudflare.com/post-mortem-on-cloudflare-control-plane-and-analytics-outage/
+- Data Center Dynamics coverage: https://www.datacenterdynamics.com/en/news/cloudflare-suffers-second-power-outage-at-flexential-data-center-in-oregon-in-six-months/
+
+**Glossary application:** Capability extension is narrowly supported as improved continuity of existing API/dashboard functions; recombination includes HA databases, capacity provisioning, failover, and rehearsed cut tests. Possibility-space change is not established. B/M/D/A/F/T desk scores are qualitative and unvalidated; rationale is in the case study.
+
+**Limits:** The operator account is the principal source; no independent customer-level traffic telemetry or facility forensic report was examined. Analytics was not fully resilient, and some services needed human intervention. One event does not prove all Code Orange actions were necessary/sufficient or guarantee resilience to regional/multi-facility failures.
+
+See [Network Resilience Case Study 03 — Cloudflare's March 2024 Contained Data-Center Outage](NETWORK-RESILIENCE-CASE-03-CLOUDFLARE-CONTROL-PLANE-CONTAINMENT.md).
