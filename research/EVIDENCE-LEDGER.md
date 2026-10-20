@@ -182,3 +182,18 @@ See [Network Resilience Case Study 01 — Meta's October 4, 2021 Global Outage](
 **Limits:** The operator account is the principal source; no independent customer-level traffic telemetry or facility forensic report was examined. Analytics was not fully resilient, and some services needed human intervention. One event does not prove all Code Orange actions were necessary/sufficient or guarantee resilience to regional/multi-facility failures.
 
 See [Network Resilience Case Study 03 — Cloudflare's March 2024 Contained Data-Center Outage](NETWORK-RESILIENCE-CASE-03-CLOUDFLARE-CONTROL-PLANE-CONTAINMENT.md).
+
+
+## Independent evidence audit — Cloudflare March 2024 recovery claims
+
+**Question:** Do sources independent of Cloudflare verify the exact seven-minute API/dashboard recovery and uninterrupted data-plane claims?
+
+**Finding:** Not in the public sources found in this review. Cloudflare's March postmortem gives the exact 14:58–15:05 UTC timeline and claims the data plane was unaffected. Data Center Dynamics separately reported the event but largely repeats Cloudflare's statements. Cloudflare's 2024 annual filing broadly describes March product impacts as lasting minutes and analytics impacts as lasting hours, but is another company-authored source, not independent technical verification. No third-party probe series, independent traffic/error-rate analysis, customer-level incident dataset, or public Flexential root-cause report was found in this pass.
+
+**Evidence label:** Detailed operator-reported recovery; externally reported but not independently measured. Do not count secondary articles repeating a postmortem as independent observations.
+
+**Audit report:** [CLOUDFLARE-RECOVERY-CLAIMS-INDEPENDENT-CHECK-01.md](CLOUDFLARE-RECOVERY-CLAIMS-INDEPENDENT-CHECK-01.md).
+
+**Sources:** Cloudflare March postmortem https://blog.cloudflare.com/major-data-center-power-failure-again-cloudflare-code-orange-tested/ ; Data Center Dynamics https://www.datacenterdynamics.com/en/news/cloudflare-suffers-second-power-outage-at-flexential-data-center-in-oregon-in-six-months/ ; Cloudflare 2024 annual filing https://cloudflare.net/files/doc_financials/2024/q4/2c5ce18c-bb02-4031-89cb-59ff64f22eaf.pdf ; status API docs https://www.cloudflarestatus.com/api.
+
+**Next test:** Seek timestamped independent synthetic monitoring, traffic/BGP/DNS telemetry, customer-side incident reports, or a public facility root-cause report. No outreach was made.
