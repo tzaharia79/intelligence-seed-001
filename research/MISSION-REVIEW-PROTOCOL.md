@@ -78,3 +78,13 @@ Current agreed sequence:
 - **Evidence boundary:** AWS analysis relies mainly on the operator postmortem in this desk review; Meta has additional independent routing/DNS observations. These are illustrative cases, not a population-level estimate, independent forensic audits, or proof that centralization is always harmful.
 - **Evidence ledger updated** and case linked in the infrastructure-resilience branch and discovery index.
 - **Next test:** Seek a positive/containment case where independently designed and tested recovery paths successfully limit an outage. Keep the branch balanced and do not release v0.3.0 until findings are synthesized and version/archive alignment is checked.
+
+
+## Mission review log — 2026-10-19 (review 06)
+
+- **Balanced resilience evidence:** Added [Network Resilience Case Study 03 — Cloudflare's March 2024 Contained Data-Center Outage](NETWORK-RESILIENCE-CASE-03-CLOUDFLARE-CONTROL-PLANE-CONTAINMENT.md). The case compares the March 2024 power failure with the November 2023 outage at the same facility after a Code Orange reliability programme.
+- **Observed improvement:** Cloudflare reports APIs and dashboards normal seven minutes after PDX01 lost power, without human intervention; the global data plane was not impacted. Facility cold-start reportedly shortened from roughly 72 hours to roughly 10 hours.
+- **Residual failure:** Analytics remained impaired until later that day and some services required human intervention. Operator postmortem is the principal evidence; the case is not a controlled experiment.
+- **Glossary application:** B/M/D/A/F/T desk prompts and distinctions among capability extension, recombination, possibility-space change, and system-level organization are explicit. The case supports a narrow claim about improved continuity after remediation, not a universal bridge law.
+- **Evidence ledger and infrastructure-resilience branch updated; discovery index linked.**
+- **Next step:** Identify an independent source of telemetry or another public postmortem that tests a similar recovery claim; then synthesize across failure and containment cases before any v0.3.0 release. Keep archive/DOI alignment audit open.
