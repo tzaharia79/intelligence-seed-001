@@ -116,6 +116,26 @@ Flexential's current public Portland/Hillsboro facility page is general marketin
 
 **Finding:** Facility mechanism, precise restoration sequence, and the reported breaker-setting contribution remain unverified by an independent public facility document in this search.
 
+
+## Reproducible BGP analysis package — 2026-10-19
+
+A standard-library Python script has been added at [`scripts/analyze_ripe_bgp_cloudflare_2024_03_26.py`](../scripts/analyze_ripe_bgp_cloudflare_2024_03_26.py). It queries RIPEstat's documented `routing-history` endpoint for AS13335 over 2024-03-26 14:30–15:30 UTC and requests BGP-state snapshots at 14:30, 14:58, 15:05, and 15:30 UTC. It saves raw JSON responses, a CSV of route timelines, and a JSON manifest containing retrieval timestamps and exact request URLs.
+
+**Important execution status:** The script is committed, but it has **not yet completed a successful data retrieval in this environment**. Direct network access from the execution container failed, and the web retrieval interface could not open the parameterized RIPEstat API URLs. No raw response files or empirical route findings are claimed. The script is a reproducible analysis path, not a completed analysis. Run it in an environment with outbound HTTPS access:
+```bash
+python3 scripts/analyze_ripe_bgp_cloudflare_2024_03_26.py
+```
+Default outputs go to `results/cloudflare-bgp-2024-03-26/`. Preserve the raw responses and manifest alongside any interpretation. Review route counts/visibility at each timestamp, inspect route changes against a matched control period, and document collector coverage. The script's state snapshots use RIPEstat's documented reconstruction from an earlier RIB snapshot plus subsequent observed updates; they are not direct packet or HTTP measurements.
+
+**Interpretation boundary:** The RIPEstat routing-history endpoint documents route announcement timelines, visibility, and peer counts; the BGP-state endpoint reconstructs route state at a timestamp. These can detect visible routing changes or instability, but cannot prove that HTTP requests succeeded, that latency was normal, or that no customer traffic was affected. A stable global route view is compatible with a local facility failure in a distributed anycast network.
+
+API documentation:
+- Routing history: https://data.stat.ripe.net/docs/data-api/api-endpoints/routing-history
+- BGP state: https://stat.ripe.net/docs/data-api/api-endpoints/bgp-state
+- Raw RIS MRT files for deeper collector-level work: https://www.ris.ripe.net/docs/mrt/
+
+**Next pairing step:** Once the script is run and raw data reviewed, search for independent archived HTTP/DNS/TLS probes in the same UTC window and record probe location, target, interval, error codes, and retention/source details. Do not merge BGP visibility with application monitoring into a single claim unless timestamps and measurement scope align.
+
 ## Updated evidence disposition
 
 | Evidence path | Result of this pass | Confidence consequence |
