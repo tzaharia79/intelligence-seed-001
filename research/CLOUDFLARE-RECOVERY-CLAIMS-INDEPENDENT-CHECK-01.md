@@ -74,6 +74,61 @@ Prioritize, in order:
 
 No contact with Cloudflare, Flexential, customers, or researchers was made. The search was limited to public material.
 
+
+## Follow-up search — archived monitoring, network measurements, customer reports, facility documentation
+
+**Follow-up date:** 2026-10-19  
+**Scope:** Public-source search for archived synthetic checks, network/routing observations, customer-side reports, and Flexential facility documentation. No operator contact was made.
+
+### A. Synthetic monitoring and status archives
+
+- Cloudflare's public status API documents incident endpoints and historical status access: https://www.cloudflarestatus.com/api . Its history is useful for reconstructing what the operator declared, but the status data itself is operator-authored.
+- The March incident was preserved under status incident identifier `b31dxdz60366`: https://www.cloudflarestatus.com/incidents/b31dxdz60366 . Search results identify a contemporaneous status notice scoped to dashboard/API issues and state that cached-file delivery via the CDN and edge security features were not affected. A community support forum also preserved the notice: https://community.centminmod.com/threads/cloudflare-dashboard-and-cloudflare-api-service-issues.24824/ . These are evidence of contemporaneous reported scope, not independent synthetic checks.
+- IsDown says it has monitored Cloudflare since April 2020, but its stated method includes monitoring Cloudflare's official status page and user reports: https://isdown.app/status/cloudflare . StatusGator similarly combines official status data, user reports, and other signals: https://statusgator.com/services/cloudflare . Public pages surfaced during this pass did not expose timestamped third-party probe results for the March 26, 2024 14:50–15:20 UTC window.
+- One contemporaneous WordPress.org support thread says a site's analytics data stopped during the dashboard/API issue and later resumed: https://wordpress.org/support/topic/site-kit-connected-correctly-and-no-data-in-analytics/ . This is a customer-side report consistent with an analytics/control-plane effect, but it is anecdotal and does not test data-plane availability.
+
+**Finding:** A historical synthetic monitoring run cannot be performed now against the 2024 event. We would need archived probes or retained monitoring logs from a provider such as Catchpoint, ThousandEyes, Pingdom, Datadog Synthetics, or a customer-operated monitor. None was found publicly in this pass. A new live test today could validate present-day endpoints, not reconstruct the incident.
+
+### B. Network and routing measurements
+
+- RIPE RIS collects BGP routing announcements and withdrawals from distributed route collectors and publishes historical MRT data: https://www.ripe.net/analyse/internet-measurements/routing-information-service-ris/ .
+- RIPEstat documents BGPlay for examining BGP route updates over a selected historical window: https://data.stat.ripe.net/docs/data-api/api-endpoints/bgplay and routing history: https://data.stat.ripe.net/docs/data-api/api-endpoints/routing-history .
+- The public web retrieval available for this pass did not yield a successful, reproducible raw-data query for AS13335 in the March 26 2024 incident window. Therefore **no BGP result is asserted here**. The next measurement step is to query RIS/RV collectors for Cloudflare-announced prefixes and AS13335 around 14:30–15:30 UTC, archive the query parameters and raw result, and compare route visibility/update rates with matched control windows before and after the event.
+- Important interpretation limit: absence of a global BGP withdrawal would not prove the data plane was unaffected. Cloudflare uses a distributed anycast network; losing one facility or location can be masked by other locations continuing to announce/serve the same prefixes. BGP data can test for routing withdrawal or instability, but cannot by itself establish HTTP success, latency, error rates, or customer impact at the edge. Ideally pair routing observations with independent HTTP/DNS/TLS probes and customer-side traffic/error data.
+
+**Finding:** Historical BGP archives are a viable independent measurement source, but this pass has identified the method rather than completed and verified the raw-data analysis. Treat network measurement as **open**, not as a negative finding.
+
+### C. Customer-side incident reports
+
+The WordPress support thread above is the clearest contemporaneous third-party report found in this pass. It links the disappearance of a site's analytics data to the dashboard/API issue and says data later returned. It supports the claim that some users experienced an analytics effect, but:
+- it does not identify the site's plan, region, or exact test method;
+- the author inferred the relationship from timing;
+- it does not measure Cloudflare-proxied traffic availability;
+- it cannot establish how broadly the effect was distributed.
+
+No sufficiently detailed customer postmortem with independently timestamped HTTP error rates or data-plane traffic measurements was located. Search absence should not be interpreted as proof none exists.
+
+### D. Facility documentation and root-cause evidence
+
+No public Flexential-authored incident report, electrical forensic report, regulator filing, or facility restoration log specific to the March 26, 2024 PDX01 event was located. Cloudflare's account relays Flexential engineers' investigation of four circuit switchboards and says incorrectly configured breaker-coordination settings were an initial suspected contributor. Data Center Dynamics' coverage repeats this account rather than presenting a separate facility investigation: https://www.datacenterdynamics.com/en/news/cloudflare-suffers-second-power-outage-at-flexential-data-center-in-oregon-in-six-months/ .
+
+Flexential's current public Portland/Hillsboro facility page is general marketing/service information, not an incident report: https://www.flexential.com/data-centers/portland-hillsboro-5 .
+
+**Finding:** Facility mechanism, precise restoration sequence, and the reported breaker-setting contribution remain unverified by an independent public facility document in this search.
+
+## Updated evidence disposition
+
+| Evidence path | Result of this pass | Confidence consequence |
+|---|---|---|
+| Archived synthetic monitoring | No timestamped independent probe dataset found | Exact seven-minute recovery remains operator-reported |
+| Status page/archive | Contemporaneous status notice found, but operator-authored | Supports declared incident scope only |
+| Network measurements | RIPE RIS/BGPlay method identified; raw query not successfully retrieved/verified here | No BGP conclusion; follow-up remains open |
+| Customer reports | One anecdotal analytics-impact report found | Limited corroboration of analytics symptoms, not data-plane continuity |
+| Facility documentation | No public Flexential root-cause or restoration report found | Physical root-cause explanation remains second-hand |
+| Independent news coverage | DCD reports event, largely citing Cloudflare | Confirms external reporting, not independent technical validation |
+
+The appropriate overall label remains: **“Detailed operator-reported recovery, externally reported and partly consistent with anecdotal customer evidence; exact recovery and data-plane claims not independently measured in this review.”**
+
 ## Glossary application
 
 - **Baseline/counterfactual:** The November 2023 incident is the observed earlier outcome; March 2024 is the later outcome after multiple changes. The counterfactual—March without remediation—is unobservable.
