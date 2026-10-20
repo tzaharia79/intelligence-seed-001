@@ -55,6 +55,13 @@ Cloudflare publishes a status API and historical incident page. In this review, 
 
 The public material reviewed did not yield a published Flexential post-incident root-cause analysis for the March 2024 PDX01 event. Cloudflare's account attributes the initial electrical explanation to Flexential engineers, but this research should not treat the breaker-setting explanation as independently confirmed.
 
+
+### 6. Contemporaneous public status notice — useful for impact scope, not independent measurement
+
+A community support forum preserved the March 26 Cloudflare status notice at 15:13 UTC: Cloudflare was investigating dashboard/API issues, and the notice said the problem did not affect cached-file delivery through the CDN or security features at the Cloudflare edge. The forum entry is here: https://community.centminmod.com/threads/cloudflare-dashboard-and-cloudflare-api-service-issues.24824/ . A corresponding Cloudflare status incident identifier appears as https://www.cloudflarestatus.com/incidents/b31dxdz60366 .
+
+This is useful evidence that, near the event, the publicly reported failure was scoped to dashboard/API access rather than described as a general CDN/security-edge outage. But the underlying status notice was authored by Cloudflare; a community repost is not independent telemetry. It corroborates the **contemporaneous declared scope**, not the actual availability of every data-plane route or the exact seven-minute recovery interval.
+
 ## What would count as stronger independent evidence?
 
 Prioritize, in order:
