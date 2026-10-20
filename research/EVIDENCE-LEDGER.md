@@ -145,3 +145,22 @@ Full report and draft records-request text: [Phoenix Artifact Inspection and Uti
 **Follow-up:** Compare other cloud/control-plane outages and documented successful containment cases; examine independent management-plane design, safe change validation, DNS/control-plane isolation, and staged recovery evidence.
 
 See [Network Resilience Case Study 01 — Meta's October 4, 2021 Global Outage](NETWORK-RESILIENCE-CASE-01-META-OUTAGE.md).
+
+
+## Network resilience comparison — AWS S3 outage (2017-02-28) and Meta outage (2021-10-04)
+
+**Claim:** Service outages can impair their own recovery-adjacent capabilities when status communication, diagnosis, operational access, or subsystem restart depends on the same infrastructure. In AWS's S3 incident, detailed Service Health Dashboard updates depended on S3 and were unavailable until 11:37 a.m. Pacific time; recovery of index/placement subsystems and integrity checks took longer than expected at scale. In Meta's incident, loss of backbone connectivity impaired normal remote access and internal diagnostic tools, and DNS route withdrawal amplified reachability loss.
+
+**Assessment:** Strong illustrative evidence for these two incidents; not a population-level estimate of cloud resilience. AWS's detailed causal/recovery account is an operator postmortem. The Meta case also has independent external observations from RIPE NCC and Cloudflare. The sources do not independently verify all internal causes or the effectiveness of every remediation.
+
+**Sources:**
+- AWS S3 postmortem: https://aws.amazon.com/message/41926/
+- Meta postmortem: https://engineering.fb.com/2021/10/05/networking-traffic/outage-details/
+- RIPE NCC routing observations: https://labs.ripe.net/author/alun_davies/facebook-down-and-out-in-bgplay/
+- Cloudflare resolver/third-party telemetry: https://blog.cloudflare.com/during-the-facebook-outage/
+
+**Glossary application:** Baseline/counterfactual boundaries are explicit. The cases expose system-level organization and correlated dependencies; capability extension is not quantified, capability recombination is observed as coupling rather than new capability, and future possibility-space change is not established. B/M/D/A/F/T desk prompts are qualitative and unvalidated; detailed case-specific scores and rationale are recorded in the case file.
+
+**Limits:** Does not prove all centralization is harmful, redundancy is useless, all recovery channels failed, or that these cases establish a universal bridge law or unified human–AI goal.
+
+**Follow-up:** Examine a case where independently designed and tested recovery paths successfully contain an outage, to avoid building the branch solely from failures. See [Network Resilience Case Study 02 — AWS S3 Outage and Recovery-Path Coupling](NETWORK-RESILIENCE-CASE-02-AWS-S3-OUTAGE.md).
