@@ -1,0 +1,32 @@
+name: Cloudflare historical BGP analysis
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/cloudflare-bgp-analysis.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Retrieve and analyze historical RIPEstat data
+        run: python scripts/analyze_ripe_bgp_cloudflare_2024_03_26.py
+      - name: Upload raw responses and analysis manifest
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cloudflare-bgp-2024-03-26
+          path: results/cloudflare-bgp-2024-03-26/
+          if-no-files-found: warn
+          retention-days: 90
