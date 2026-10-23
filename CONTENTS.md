@@ -1,7 +1,7 @@
 # Contents
 
 ## Chapter 1 — The Big Question
-What is intelligence, and how does it begin? We start with the main idea behind this project and explain the key words we’ll use along the way.
+What if intelligence is more than something that happens inside living things? Could it be part of the deeper pattern—or even the design—of existence itself? This project explores the possibility that each phase of intelligence can develop or encounter features that help it reach a new phase. From this perspective, AI might become a bridge that expands human intelligence, while also developing into a new and distinct form of intelligence in its own right. We’ll explore the idea with curiosity, but treat it as a hypothesis to examine—not a fact we’ve already proved.
 
 ## Chapter 2 — Life Learns and Changes
 From simple living things to animals and humans, we explore how life takes in information, learns, adapts, and passes things on. We also look at evolution’s limits and the times things don’t work out.
